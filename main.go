@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"log"
 	"net/http"
@@ -19,38 +18,42 @@ import (
 )
 
 func main() {
-	// 1. 加载配置文件
+	// 1. 加载配置
 	if err := settings.Init(); err != nil {
-		fmt.Printf("load config failed, err:%v\n", err)
+		fmt.Printf("init settings failed, err:%v\n", err)
 		return
 	}
+	fmt.Println(settings.Conf)
+	fmt.Println(settings.Conf.Port)
+	fmt.Println(settings.Conf.LogConfig == nil)
 	// 2. 初始化日志
-	if err := logger.Init(); err != nil {
+	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Printf("init logger failed, err:%v\n", err)
 		return
 	}
-	zap.L().Debug("logger init success")
+	defer zap.L().Sync()
+	zap.L().Debug("logger init success...")
 	// 3. 初始化MySQL连接
-	if err := mysql.Init(); err != nil {
+	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Printf("init mysql failed, err:%v\n", err)
 		return
 	}
-	defer mysql.Close() // 程序退出关闭数据库连接
-
-	// 4.初始化redis连接
-	if err := redis.Init(); err != nil {
+	defer mysql.Close()
+	// 4. 初始化Redis连接
+	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Printf("init redis failed, err:%v\n", err)
 		return
 	}
 	defer redis.Close()
-
-	// 5.注册路由
-	r := routes.Setup()
-	// 6.启动服务器
+	// 5. 注册路由
+	r := routes.Setup(settings.Conf.Mode)
+	// 6. 启动服务（优雅关机）
+	fmt.Println(settings.Conf.Port)
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
 		Handler: r,
 	}
+
 	go func() {
 		// 开启一个goroutine启动服务
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {

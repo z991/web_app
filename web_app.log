@@ -7,3 +7,24 @@
 {"level":"INFO","time":"2021-07-01T20:36:07.994+0800","caller":"web_app/main.go:77","msg":"Server exiting"}
 {"level":"DEBUG","time":"2021-07-01T20:36:11.628+0800","caller":"web_app/main.go:32","msg":"logger init success"}
 {"level":"INFO","time":"2021-07-01T20:36:14.788+0800","caller":"logger/logger.go:71","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000073263}
+{"level":"INFO","time":"2021-07-01T20:45:11.559+0800","caller":"web_app/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-07-01T20:45:12.063+0800","caller":"web_app/main.go:77","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-07-06T07:53:38.406+0800","caller":"web_app/main.go:32","msg":"logger init success"}
+{"level":"INFO","time":"2021-07-06T07:54:19.599+0800","caller":"logger/logger.go:71","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000064736}
+{"level":"INFO","time":"2021-07-06T07:54:19.881+0800","caller":"logger/logger.go:71","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000000641}
+{"level":"INFO","time":"2021-07-06T08:10:57.175+0800","caller":"web_app/main.go:69","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-07-06T08:10:57.679+0800","caller":"web_app/main.go:78","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-07-06T08:11:00.035+0800","caller":"web_app/main.go:33","msg":"logger init success"}
+{"level":"INFO","time":"2021-07-06T08:14:04.752+0800","caller":"web_app/main.go:71","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-07-06T08:14:05.258+0800","caller":"web_app/main.go:80","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-07-06T08:14:08.957+0800","caller":"web_app/main.go:34","msg":"logger init success..."}
+{"level":"INFO","time":"2021-07-06T08:16:41.360+0800","caller":"web_app/main.go:71","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-07-06T08:16:41.865+0800","caller":"web_app/main.go:80","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-07-06T08:16:44.299+0800","caller":"web_app/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2021-07-06T08:19:01.455+0800","caller":"web_app/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-07-06T08:19:01.958+0800","caller":"web_app/main.go:81","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-07-06T08:19:03.774+0800","caller":"web_app/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2021-07-06T08:19:14.829+0800","caller":"logger/logger.go:72","msg":"/","status":404,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000043958}
+{"level":"INFO","time":"2021-07-06T08:19:15.118+0800","caller":"logger/logger.go:72","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000000996}
+{"level":"INFO","time":"2021-07-06T08:19:21.645+0800","caller":"logger/logger.go:72","msg":"/version","status":200,"method":"GET","path":"/version","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000055169}
+{"level":"INFO","time":"2021-07-06T08:19:35.617+0800","caller":"logger/logger.go:72","msg":"/version","status":200,"method":"GET","path":"/version","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.000017755}
