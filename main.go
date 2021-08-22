@@ -10,6 +10,7 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+	"web_app/controller"
 	"web_app/dao/mysql"
 	"web_app/dao/redis"
 	"web_app/logger"
@@ -46,8 +47,16 @@ func main() {
 		return
 	}
 	defer redis.Close()
+
+	// 雪花算法生成id
 	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
 		fmt.Printf("init snowflake failed, err:%v\n", err)
+	}
+
+	// 初始化gin框架内置的校验器使用的翻译器
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Printf("init validator trans failed, err:%v\n", err)
+		return
 	}
 
 	// 5. 注册路由
