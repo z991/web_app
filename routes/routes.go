@@ -2,6 +2,7 @@ package routes
 
 import (
 	"net/http"
+	"web_app/controller"
 	"web_app/logger"
 	"web_app/settings"
 
@@ -14,7 +15,8 @@ func Setup(mode string) *gin.Engine {
 	}
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
-
+	// 用户注册
+	r.POST("/signup", controller.SignUpHandler)
 	r.GET("/version", func(c *gin.Context) {
 		c.String(http.StatusOK, settings.Conf.Version)
 	})
