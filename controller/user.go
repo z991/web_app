@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"go.uber.org/zap"
@@ -28,11 +27,13 @@ func SignUpHandler(c *gin.Context) {
 			"msg": removeTopStruct(errs.Translate(trans)),
 		})
 	}
-	// 手动对参数进行详细业务规则校验
 
-	fmt.Println(p)
 	// 业务处理
-	logic.SignUp(p)
+	if err := logic.SignUp(p); err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "注册失败",
+		})
+	}
 	// 返回响应
 	c.JSON(http.StatusOK, gin.H{
 		"msg": "success",

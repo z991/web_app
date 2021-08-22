@@ -6,12 +6,23 @@ import (
 	"web_app/pkg/snowflake"
 )
 
-func SignUp(p *models.ParamSignUp) {
+func SignUp(p *models.ParamSignUp) (err error) {
 	// 判断用户存不存在
-	mysql.QueryUserByUsername()
+
+	if err := mysql.CheckUserExists(p.Username); err != nil {
+		return err
+	}
+
 	// 生成 UID
-	snowflake.GenID()
+	userID := snowflake.GenID()
+	// 构造一个User实例
+	user := &models.User{
+		UserID:   userID,
+		Username: p.Username,
+		Password: p.Password,
+	}
+
 	// 数据写入数据库
-	mysql.InsertUser()
+	return mysql.InsertUser(user)
 
 }
