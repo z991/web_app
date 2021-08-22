@@ -17,8 +17,15 @@ func Setup(mode string) *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 	// 用户注册
 	r.POST("/signup", controller.SignUpHandler)
+	// 用户登录
+	r.POST("/login", controller.LoginHandler)
 	r.GET("/version", func(c *gin.Context) {
 		c.String(http.StatusOK, settings.Conf.Version)
+	})
+	r.NoRoute(func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "404",
+		})
 	})
 	return r
 }
