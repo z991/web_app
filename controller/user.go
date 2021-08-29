@@ -1,10 +1,11 @@
 package controller
 
 import (
+	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"go.uber.org/zap"
-	"net/http"
+	"web_app/dao/mysql"
 	"web_app/logic"
 	"web_app/models"
 )
@@ -18,27 +19,26 @@ func SignUpHandler(c *gin.Context) {
 		// 判断 err 是不是 validator.ValidationErrors 类型
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": err.Error(),
-			})
+			ResponseError(c, CodeInvalidParam)
 			return
 		}
-		c.JSON(http.StatusOK, gin.H{
-			"msg": removeTopStruct(errs.Translate(trans)),
-		})
+		ResponseErrorWithMsg(c, CodeInvalidParam, removeTopStruct(errs.Translate(trans)))
+		return
 	}
 
 	// 业务处理
 	if err := logic.SignUp(p); err != nil {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "注册失败",
-		})
+		zap.L().Error("logic.SignUp failed", zap.Error(err))
+		if errors.Is(err, mysql.ErrorUserExist) {
+			ResponseError(c, CodeUserExist)
+			return
+		}
+
+		ResponseError(c, CodeServerBusy)
 		return
 	}
 	// 返回响应
-	c.JSON(http.StatusOK, gin.H{
-		"msg": "success",
-	})
+	ResponseSuccess(c, nil)
 }
 
 func LoginHandler(c *gin.Context) {
@@ -48,28 +48,22 @@ func LoginHandler(c *gin.Context) {
 		zap.L().Error("Login with invalid param", zap.Error(err))
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": err.Error(),
-			})
+			ResponseError(c, CodeInvalidParam)
 			return
 		}
-		c.JSON(http.StatusOK, gin.H{
-			"msg": removeTopStruct(errs.Translate(trans)),
-		})
+		ResponseErrorWithMsg(c, CodeInvalidParam, removeTopStruct(errs.Translate(trans)))
 		return
 	}
 
 	// 2. 业务逻辑处理
 	if err := logic.Login(p); err != nil {
 		zap.L().Error("logic.Login failed", zap.Error(err))
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "用户名或者密码错误",
-		})
-	} else {
-		// 3. 返回响应
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "登录成功",
-		})
+		if errors.Is(err, mysql.ErrorUserNotExist) {
+			ResponseError(c, CodeUserNotExist)
+		}
+		ResponseError(c, CodeServerBusy)
+		return
 	}
+	ResponseSuccess(c, nil)
 
 }
