@@ -57,7 +57,7 @@ func Login(user *models.User) (err error) {
 	}
 	// 判断密码是非正确
 	password := encryptPassword(oPassword)
-	if password == user.Password {
+	if password != user.Password {
 		return ErrorInvalidPassword
 	}
 	return
