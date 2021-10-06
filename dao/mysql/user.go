@@ -4,17 +4,10 @@ import (
 	"crypto/md5"
 	"database/sql"
 	"encoding/hex"
-	"errors"
 	"web_app/models"
 )
 
 const secret = "zhuxunayu"
-
-var (
-	ErrorUserExist       = errors.New("用户已存在")
-	ErrorUserNotExist    = errors.New("用户不存在")
-	ErrorInvalidPassword = errors.New("用户名或密码错误")
-)
 
 // CheckUserExists 判断用户是否存在
 func CheckUserExists(username string) (err error) {

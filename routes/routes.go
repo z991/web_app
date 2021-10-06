@@ -25,6 +25,8 @@ func Setup(mode string) *gin.Engine {
 	v1.Use(middlewares.JWTAuthMiddleware()) // 应用JWT认证中间件
 	{
 		v1.GET("/community", controller.CommunityHandler)
+		v1.GET("/community/:id", controller.CommunityDetailHandler)
+		v1.POST("/post", controller.CreatePostHandler)
 	}
 	r.GET("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
 		c.Request.Header.Get("Authorization")
