@@ -23,6 +23,8 @@ func Setup(mode string) *gin.Engine {
 	// 用户登录
 	v1.POST("/login", controller.LoginHandler)
 	v1.Use(middlewares.JWTAuthMiddleware()) // 应用JWT认证中间件
+
+	v1.GET("/posts2", controller.GetPostListHandler2)
 	{
 		v1.GET("/community", controller.CommunityHandler)
 		v1.GET("/community/:id", controller.CommunityDetailHandler)
