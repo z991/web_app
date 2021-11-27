@@ -26,17 +26,19 @@ func Setup(mode string) *gin.Engine {
 
 	v1.GET("/posts2", controller.GetPostListHandler2)
 	v1.GET("/post/:id", controller.GetPostDetailHandler)
+	v1.GET("/community", controller.CommunityHandler)
+	v1.GET("/community/:id", controller.CommunityDetailHandler)
 	{
-		v1.GET("/community", controller.CommunityHandler)
-		v1.GET("/community/:id", controller.CommunityDetailHandler)
+
 		v1.POST("/post", controller.CreatePostHandler)
+		v1.POST("/vote", controller.PostVoteController)
 	}
 	r.GET("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
 		c.Request.Header.Get("Authorization")
 		c.String(http.StatusOK, "pong")
 	})
-	// 社区列表
 
+	// 社区列表
 	r.GET("/version", func(c *gin.Context) {
 		c.String(http.StatusOK, settings.Conf.Version)
 	})

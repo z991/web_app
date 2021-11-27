@@ -40,3 +40,74 @@
 {"level":"INFO","time":"2021-08-11T22:09:50.162+0800","caller":"web_app/main.go:72","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-11T22:09:50.666+0800","caller":"web_app/main.go:81","msg":"Server exiting"}
 {"level":"DEBUG","time":"2021-08-11T22:28:18.914+0800","caller":"web_app/main.go:36","msg":"logger init success..."}
+{"level":"DEBUG","time":"2021-10-04T21:44:16.995+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-10-04T21:44:17.024+0800","caller":"mysql/mysql.go:27","msg":"connect DB failed","error":"Error 1045: Access denied for user 'root'@'172.17.0.1' (using password: YES)"}
+{"level":"DEBUG","time":"2021-10-04T21:45:02.326+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-10-04T21:45:02.350+0800","caller":"mysql/mysql.go:27","msg":"connect DB failed","error":"Error 1049: Unknown database 'bluebell'"}
+{"level":"DEBUG","time":"2021-10-04T21:46:33.412+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-04T21:46:53.422+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36","errors":"","cost":0.000239239}
+{"level":"INFO","time":"2021-10-04T21:46:53.770+0800","caller":"logger/logger.go:82","msg":"/favicon.ico","status":200,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36","errors":"","cost":0.000023586}
+{"level":"INFO","time":"2021-10-04T21:50:24.932+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-04T21:50:24.933+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-04T21:50:53.362+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-04T21:51:18.263+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-04T21:51:18.265+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-06T09:14:44.444+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-10-06T09:14:44.445+0800","caller":"mysql/mysql.go:27","msg":"connect DB failed","error":"dial tcp 127.0.0.1:3306: connect: connection refused"}
+{"level":"DEBUG","time":"2021-10-06T09:15:28.890+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-06T09:23:59.105+0800","caller":"logger/logger.go:82","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000117584}
+{"level":"INFO","time":"2021-10-06T09:26:13.142+0800","caller":"logger/logger.go:82","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.034710357}
+{"level":"ERROR","time":"2021-10-06T09:28:39.686+0800","caller":"controller/user.go:61","msg":"logic.Login failed","error":"用户名或密码错误"}
+{"level":"INFO","time":"2021-10-06T09:28:39.688+0800","caller":"logger/logger.go:82","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.004334128}
+{"level":"ERROR","time":"2021-10-06T09:29:17.838+0800","caller":"controller/user.go:61","msg":"logic.Login failed","error":"用户名或密码错误"}
+{"level":"INFO","time":"2021-10-06T09:29:17.838+0800","caller":"logger/logger.go:82","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.004921131}
+{"level":"ERROR","time":"2021-10-06T09:29:55.425+0800","caller":"controller/user.go:61","msg":"logic.Login failed","error":"用户名或密码错误"}
+{"level":"INFO","time":"2021-10-06T09:29:55.425+0800","caller":"logger/logger.go:82","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.002571514}
+{"level":"INFO","time":"2021-10-06T09:30:17.400+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-06T09:30:17.408+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-06T09:30:20.864+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-10-06T09:30:24.539+0800","caller":"controller/user.go:61","msg":"logic.Login failed","error":"用户名或密码错误"}
+{"level":"INFO","time":"2021-10-06T09:30:24.540+0800","caller":"logger/logger.go:82","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.007748989}
+{"level":"INFO","time":"2021-10-06T09:31:30.777+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-06T09:31:30.780+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-06T09:32:05.011+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"DEBUG","time":"2021-10-06T09:33:53.324+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-06T09:33:57.364+0800","caller":"logger/logger.go:82","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.029114163}
+{"level":"INFO","time":"2021-10-06T09:36:11.590+0800","caller":"logger/logger.go:82","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.014161729}
+{"level":"INFO","time":"2021-10-06T09:57:59.303+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-06T09:57:59.306+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-06T10:13:01.096+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-06T10:13:11.003+0800","caller":"logger/logger.go:82","msg":"/api/v1/community/1","status":200,"method":"GET","path":"/api/v1/community/1","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.019137453}
+{"level":"INFO","time":"2021-10-06T10:13:15.052+0800","caller":"logger/logger.go:82","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.00372283}
+{"level":"INFO","time":"2021-10-06T11:30:23.619+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-06T11:30:23.623+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-06T11:30:28.031+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-06T11:33:23.806+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.056346807}
+{"level":"INFO","time":"2021-10-06T19:41:47.885+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.314045189}
+{"level":"INFO","time":"2021-10-06T19:41:49.173+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.011862889}
+{"level":"INFO","time":"2021-10-06T21:53:50.772+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-06T21:53:50.778+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-07T10:38:13.955+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-10-07T10:39:05.809+0800","caller":"logger/logger.go:82","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.032362427}
+{"level":"INFO","time":"2021-10-07T10:44:07.922+0800","caller":"logger/logger.go:82","msg":"/api/v1/post2/","status":200,"method":"GET","path":"/api/v1/post2/","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.000068789}
+{"level":"DEBUG","time":"2021-10-07T10:44:34.907+0800","caller":"logic/post.go:32","msg":"GetPostList2","ids":["167825619663458304"]}
+{"level":"DEBUG","time":"2021-10-07T10:44:34.936+0800","caller":"logic/post.go:37","msg":"GetPostList2","posts":[{"id":"167825619663458304","author_id":167444890899189760,"community_id":1,"status":0,"title":"test_01","content":"hello-word&save redis","create_time":"2021-10-07T02:39:05Z"}]}
+{"level":"INFO","time":"2021-10-07T10:44:34.977+0800","caller":"logger/logger.go:82","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.078869175}
+{"level":"INFO","time":"2021-10-07T11:02:30.742+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-07T11:02:30.744+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-10-07T11:02:35.932+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-10-07T11:03:26.866+0800","caller":"logic/post.go:128","msg":"mysql.GetPostById(pid) failed","pid":1,"error":"sql: no rows in result set"}
+{"level":"ERROR","time":"2021-10-07T11:03:26.866+0800","caller":"controller/post.go:66","msg":"logic.GetPostById(pid) failed","error":"sql: no rows in result set"}
+{"level":"INFO","time":"2021-10-07T11:03:26.867+0800","caller":"logger/logger.go:82","msg":"/api/v1/post/1","status":200,"method":"GET","path":"/api/v1/post/1","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.007909303}
+{"level":"INFO","time":"2021-10-07T11:03:51.900+0800","caller":"logger/logger.go:82","msg":"/api/v1/post/167825619663458304","status":200,"method":"GET","path":"/api/v1/post/167825619663458304","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.021250441}
+{"level":"INFO","time":"2021-10-07T17:39:35.159+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-10-07T17:39:35.177+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-11-05T21:04:41.681+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-11-05T21:30:05.451+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-11-05T21:30:05.454+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-11-14T20:50:34.989+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"ERROR","time":"2021-11-14T20:50:34.989+0800","caller":"mysql/mysql.go:27","msg":"connect DB failed","error":"dial tcp 127.0.0.1:3306: connect: connection refused"}
+{"level":"DEBUG","time":"2021-11-14T20:52:45.288+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
+{"level":"INFO","time":"2021-11-14T20:52:55.810+0800","caller":"web_app/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-11-14T20:52:55.813+0800","caller":"web_app/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-11-27T15:21:30.630+0800","caller":"web_app/main.go:37","msg":"logger init success..."}
